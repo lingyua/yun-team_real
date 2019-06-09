@@ -1,5 +1,4 @@
-<!-- <scroll-view scroll-y style="height: {{scroll_height}}rpx;"> -->
-    <view class="beijing">
+ <view class="beijing">
         <view class="name ">
             <view class="tx">
                 <open-data type="userAvatarUrl"></open-data>
@@ -18,7 +17,7 @@
                 <image src="https://neauhand.hhp.im/img/pc1.png" class="car_img"></image>
             </view>
             <view class="car_li">
-                <li style="font-size:4.5vw; color:#333366; padding:0 0 2vw 0;">组队拼车</li>
+                <li style="font-size:4.5vw; color:#333366; padding:0 0 2vw 0;">组队出克</li>
                 <li style="color:#336666;font-size:3.5vw; ">Car pooling</li>
             </view>
         </view>
@@ -61,4 +60,3 @@
             </view>
         </view>
     </view>
-<!-- </scroll-view> -->

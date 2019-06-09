@@ -1,6 +1,7 @@
 <!-- pages/car/page_car.wxml -->
+<view class="all">
 <view class="head_input">
-<van-notify id="custom-selector" />
+  <van-notify id="custom-selector" />
   <van-cell title="时间" icon="clock-o" is-link bind:click="onTap" value="{{time}}" />
   <van-cell title="地点" icon="location-o" is-link bind:click="getUserLocation" value="{{didian}}" center="{{true}}" />
   <van-cell-group>
@@ -18,13 +19,13 @@
     </van-field>
   </van-cell-group>
   <!-- 位置授权弹窗 -->
-  <van-popup show="{{ showlocation }}"  overlay="{{ true }}" bind:click-overlay="onCloseload">
+  <van-popup show="{{ showlocation }}" overlay="{{ true }}" bind:click-overlay="onCloseload">
     <view class="openload">
       <view class="loadtext">需要你允许位置授权</view>
       <view class="butload">
-        <van-button   type="info"  bind:click="onCloseload">偏不</van-button>
+        <van-button type="info" bind:click="onCloseload">偏不</van-button>
         <view style="width:16vw;height:5vw;"></view>
-        <van-button   type="primary"  bind:click="Opensetting">好的</van-button>
+        <van-button type="primary" bind:click="Opensetting">好的</van-button>
       </view>
     </view>
   </van-popup>
@@ -62,3 +63,4 @@
   <van-loading type="spinner" color="#333366" size="5vw" />
 </view>
 <view wx:if="{{end}}" class="newsdown">已经到底了哦~</view>
+</view>

@@ -11,6 +11,7 @@
     "pages/attention/page_attention",
     "pages/feedback/page_feedback",
     "pages/search/page_search",
+    "pages/aboutus/aboutus",
     "pages/admin/admin",
     "pages/admin-delete/admin-delete",
     "pages/admin-notice/admin-notice",

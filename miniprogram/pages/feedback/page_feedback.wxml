@@ -9,6 +9,4 @@
         <!-- //点击按钮时把textarea中的内容保存在这里 -->
          <!-- <view>{{concent}}{{Nowtime}}</view> -->
     </form>
-    
-   
 </view>

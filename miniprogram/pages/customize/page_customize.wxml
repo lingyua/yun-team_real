@@ -1,57 +1,59 @@
 <!-- pages/car/page_car.wxml -->
-<view class="head_input">
-  <van-notify id="custom-selector" />
-  <van-cell title="时间" icon="clock-o" is-link bind:click="onTap" value="{{time}}" />
-  <van-cell-group>
-    <!-- 输入框 -->
-    <van-field maxlength="30" value="{{ didian_customize }}" left-icon="location-o" center clearable label="地点" placeholder="请输入地址" border="{{ false }}" bind:input="Location_customize" use-button-slot></van-field>
-  </van-cell-group>
-  <van-cell-group>
-    <!-- 输入框 -->
-    <van-field maxlength="30" value="{{ id_customize }}" left-icon="qr" center clearable label="自定义项目" placeholder="干点啥好嘞..." border="{{ false }}" bind:input="Input_customize" use-button-slot></van-field>
-  </van-cell-group>
-  <van-cell-group>
-    <!-- 输入框 -->
-    <van-field maxlength="30" value="{{ id_mess }}" left-icon="phone-o" center clearable label="联系方式" placeholder="请注意保护敏感信息" border="{{ false }}" bind:input="Input_mess" use-button-slot></van-field>
-  </van-cell-group>
-  <van-cell-group>
-    <!-- 输入框 -->
-    <van-field maxlength="150" value="{{ beizhu }}" left-icon="edit" center clearable label="备注" placeholder="说点想补充的吧" border="{{ false }}" bind:input="Input_beizhu" use-button-slot>
-      <van-button slot="button" size="small" type="primary" bind:click="Push">发布</van-button>
-    </van-field>
-  </van-cell-group>
-  <!-- 弹出框 -->
-  <van-popup show="{{ showTime }}" position="bottom" overlay="{{ true }}" bind:click-overlay="onClose">
-    <!-- 时间选择器 -->
-    <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:confirm="onInput" bind:cancel="onClose" />
-  </van-popup>
-</view>
-<view style="height:10vw;background-color:rgb(251,251,251);"></view>
-<!-- 输出面板 -->
-<!-- <view class="content"> -->
-<view class='content' wx:for="{{arrcustomize}}" wx:key="123">
-  <view class="userinfo">
-    <block>
-      <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
-      <text class="userinfo-nickname">{{item.nickname}}</text>
-    </block>
+<view class="all">
+  <view class="head_input">
+    <van-notify id="custom-selector" />
+    <van-cell title="时间" icon="clock-o" is-link bind:click="onTap" value="{{time}}" />
+    <van-cell-group>
+      <!-- 输入框 -->
+      <van-field maxlength="30" value="{{ didian_customize }}" left-icon="location-o" center clearable label="地点" placeholder="请输入地址" border="{{ false }}" bind:input="Location_customize" use-button-slot></van-field>
+    </van-cell-group>
+    <van-cell-group>
+      <!-- 输入框 -->
+      <van-field maxlength="30" value="{{ id_customize }}" left-icon="qr" center clearable label="自定义项目" placeholder="干点啥好嘞..." border="{{ false }}" bind:input="Input_customize" use-button-slot></van-field>
+    </van-cell-group>
+    <van-cell-group>
+      <!-- 输入框 -->
+      <van-field maxlength="30" value="{{ id_mess }}" left-icon="phone-o" center clearable label="联系方式" placeholder="请注意保护敏感信息" border="{{ false }}" bind:input="Input_mess" use-button-slot></van-field>
+    </van-cell-group>
+    <van-cell-group>
+      <!-- 输入框 -->
+      <van-field maxlength="150" value="{{ beizhu }}" left-icon="edit" center clearable label="备注" placeholder="说点想补充的吧" border="{{ false }}" bind:input="Input_beizhu" use-button-slot>
+        <van-button slot="button" size="small" type="primary" bind:click="Push">发布</van-button>
+      </van-field>
+    </van-cell-group>
+    <!-- 弹出框 -->
+    <van-popup show="{{ showTime }}" position="bottom" overlay="{{ true }}" bind:click-overlay="onClose">
+      <!-- 时间选择器 -->
+      <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:confirm="onInput" bind:cancel="onClose" />
+    </van-popup>
   </view>
-  <van-panel desc="发布时间：{{item.Nowtime}}">
-    <view class="push">
-      <view class="item">时间：{{item.time}}</view>
-      <view class="item">地点：{{item.didian_customize}}</view>
-      <view class="item">项目：{{item.id_customize}}</view>
+  <view style="height:10vw;background-color:rgb(251,251,251);"></view>
+  <!-- 输出面板 -->
+  <!-- <view class="content"> -->
+  <view class='content' wx:for="{{arrcustomize}}" wx:key="123">
+    <view class="userinfo">
+      <block>
+        <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
+        <text class="userinfo-nickname">{{item.nickname}}</text>
+      </block>
     </view>
-    <van-collapse value="{{ activeNames }}" bind:change="onChange">
-      <van-collapse-item value="了解下" icon="add-o" name="{{index}}">
-        <view>联系方式：{{ item.id_mess }}</view>
-        <view>备注：{{item.beizhu}}</view>
-      </van-collapse-item>
-    </van-collapse>
-    <view style="height:5vw;background-color:rgb(251,251,251);"></view>
-  </van-panel>
+    <van-panel desc="发布时间：{{item.Nowtime}}">
+      <view class="push">
+        <view class="item">时间：{{item.time}}</view>
+        <view class="item">地点：{{item.didian_customize}}</view>
+        <view class="item">项目：{{item.id_customize}}</view>
+      </view>
+      <van-collapse value="{{ activeNames }}" bind:change="onChange">
+        <van-collapse-item value="了解下" icon="add-o" name="{{index}}">
+          <view>联系方式：{{ item.id_mess }}</view>
+          <view>备注：{{item.beizhu}}</view>
+        </van-collapse-item>
+      </van-collapse>
+      <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+    </van-panel>
+  </view>
+  <view class="loading" wx:if="{{loading}}">
+    <van-loading type="spinner" color="#333366" size="5vw" />
+  </view>
+  <view wx:if="{{end}}" class="newsdown">已经到底了哦~</view>
 </view>
-<view class="loading" wx:if="{{loading}}">
-  <van-loading type="spinner" color="#333366" size="5vw" />
-</view>
-<view wx:if="{{end}}" class="newsdown">已经到底了哦~</view>

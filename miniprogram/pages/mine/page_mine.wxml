@@ -22,7 +22,9 @@
                 <view style="height:5vw;background-color:rgb(251,251,251);"></view>
                 <van-cell title="使用注意" is-link url="/pages/attention/page_attention" link-type="navigateTo" />
                 <view style="height:5vw;background-color:rgb(251,251,251);"></view>
-                <van-cell title="开发者选项" is-link bind:tap="toadmin"/>
+                <van-cell title="关于我们" is-link url="/pages/aboutus/aboutus" link-type="navigateTo" />
+                 <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+                <van-cell title="开发者选项" is-link bind:tap="toadmin" link-type="navigateTo"/>
                 <view style="height:5vw;background-color:rgb(251,251,251);"></view>
                 <view style="font-size:3vw;text-align:center;color: #333366;padding:2vw 0 0 0;">
                     更多好用功能敬请期待！

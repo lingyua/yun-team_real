@@ -1,0 +1,9 @@
+<!-- miniprogram/pages/aboutus/aboutus.wxml -->
+<view class="headus">
+    <image src="https://neauhand.hhp.im/img/jser.jpg" class="logo_jser"></image>
+    <view class="usall">
+        <view class="textus">author by ——</view>
+        <view style="height:7vw;"></view>
+        <view class="us">Chiyu && Lingyua && S-BW</view>
+    </view>
+</view>

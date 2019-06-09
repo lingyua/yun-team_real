@@ -1,140 +1,143 @@
 <!-- pages/card/page_card.wxml -->
-<van-tabs color="rgba(153,153,153,0.5);" animated sticky  bind:change='changetab'>
-    <!-- 我的拼车历史界面 -->
-    <van-tab title="拼车" title-style="color: #24343b;">
+<van-tabs color="rgba(153,153,153,0.5);" animated sticky bind:change='changetab'>
+    <!-- 我的出克历史界面 -->
+    <van-tab title="出克" title-style="color: #24343b;">
         <view class="hiscar">
-        <view style="height:5vw;background-color:rgb(251,251,251);"></view>
-        <view class='content' wx:for="{{arroldcar}}" wx:key="index">
-            <van-dialog id="van-dialog" />
-            <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
-                <view class="userinfo">
-                    <block>
-                        <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
-                        <text class="userinfo-nickname">{{item.nickname}}</text>
-                    </block>
-                </view>
-                <van-panel desc="发布时间:{{item.Nowtime}}">
-                    <view class="push">
-                        <view class="item">时间:{{item.time}}</view>
-                        <view class="item">起点:{{item.qidian}}</view>
-                        <view class="item">终点:{{item.zhongdian}}</view>
-                        <view class="item">联系方式:{{ item.id_mess }}</view>
-                        <view class="item">备注:{{ item.beizhu }}</view>
-                    </view>
-                </van-panel>
-            </van-swipe-cell>
             <view style="height:5vw;background-color:rgb(251,251,251);"></view>
-        </view>
-        <view class="backnews" wx:if="{{arroldcar.length==0}}">
-            <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
-            <view>快去发布新内容吧～～</view>
-        </view>
-        <view class="loading" wx:if="{{loadingcar}}">
-            <van-loading type="spinner" color="#333366" size="5vw" />
-        </view>
-        <view wx:if="{{endcar}}" class="newsdown">已经到底了哦~</view>
+            <view class='content' wx:for="{{arroldcar}}" wx:key="index">
+                <van-dialog id="van-dialog" />
+                <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
+                    <view class="userinfo">
+                        <block>
+                            <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
+                            <text class="userinfo-nickname">{{item.nickname}}</text>
+                        </block>
+                    </view>
+                    <van-panel desc="发布时间:{{item.Nowtime}}">
+                        <view class="push">
+                            <view class="item">时间:{{item.time}}</view>
+                            <view class="item">起点:{{item.qidian}}</view>
+                            <view class="item">终点:{{item.zhongdian}}</view>
+                            <view class="item">联系方式:{{ item.id_mess }}</view>
+                            <view class="item">备注:{{ item.beizhu }}</view>
+                        </view>
+                    </van-panel>
+                </van-swipe-cell>
+                <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+            </view>
+            <view class="backnews" wx:if="{{arroldcar.length==0}}">
+                <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
+                <view>快去发布新内容吧～～</view>
+            </view>
+            <view class="loading" wx:if="{{loadingcar}}">
+                <van-loading type="spinner" color="#333366" size="5vw" />
+            </view>
+            <view wx:if="{{endcar}}" class="newsdown">已经到底了哦~</view>
         </view>
     </van-tab>
-
     <!-- 我的运动历史界面 -->
     <van-tab title="运动" title-style="color: #24343b;">
-        <view style="height:5vw;background-color:rgb(251,251,251);"></view>
-        <view class='content' wx:for="{{arroldsport}}" wx:key="221">
-            <van-dialog id="van-dialog" />
-            <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
-                <view class="userinfo">
-                    <block>
-                        <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
-                        <text class="userinfo-nickname">{{item.nickname}}</text>
-                    </block>
-                </view>
-                <van-panel desc="发布时间:{{item.Nowtime}}">
-                    <view class="push">
-                        <view class="item">时间：{{item.time}}</view>
-                        <view class="item">地点：{{item.didian}}</view>
-                        <view class="item">运动项目：{{item.id_sport}}</view>
-                        <view class="item">联系方式：{{item.id_mess}}</view>
-                        <view class="item">备注：{{item.beizhu}}</view>
-                    </view>
-                </van-panel>
-            </van-swipe-cell>
+        <view class="hissport">
             <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+            <view class='content' wx:for="{{arroldsport}}" wx:key="221">
+                <van-dialog id="van-dialog" />
+                <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
+                    <view class="userinfo">
+                        <block>
+                            <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
+                            <text class="userinfo-nickname">{{item.nickname}}</text>
+                        </block>
+                    </view>
+                    <van-panel desc="发布时间:{{item.Nowtime}}">
+                        <view class="push">
+                            <view class="item">时间：{{item.time}}</view>
+                            <view class="item">地点：{{item.didian}}</view>
+                            <view class="item">运动项目：{{item.id_sport}}</view>
+                            <view class="item">联系方式：{{item.id_mess}}</view>
+                            <view class="item">备注：{{item.beizhu}}</view>
+                        </view>
+                    </van-panel>
+                </van-swipe-cell>
+                <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+            </view>
+            <view class="backnews" wx:if="{{arroldsport.length==0}}">
+                <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
+                <view>快去发布新内容吧～～</view>
+            </view>
+            <view class="loading" wx:if="{{loadingsport}}">
+                <van-loading type="spinner" color="#333366" size="5vw" />
+            </view>
+            <view wx:if="{{endsport}}" class="newsdown">已经到底了哦~</view>
         </view>
-        <view class="backnews" wx:if="{{arroldsport.length==0}}">
-            <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
-            <view>快去发布新内容吧～～</view>
-        </view>
-        <view class="loading" wx:if="{{loadingsport}}">
-            <van-loading type="spinner" color="#333366" size="5vw" />
-        </view>
-        <view wx:if="{{endsport}}" class="newsdown">已经到底了哦~</view>
     </van-tab>
-
     <!-- 我的学习历史界面 -->
     <van-tab title="学习" title-style="color: #24343b;">
-        <view style="height:5vw;background-color:rgb(251,251,251);"></view>
-        <view class='content' wx:for="{{arroldstudy}}" wx:key="222">
-            <van-dialog id="van-dialog" />
-            <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
-                <view class="userinfo">
-                    <block>
-                        <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
-                        <text class="userinfo-nickname">{{item.nickname}}</text>
-                    </block>
-                </view>
-                <van-panel desc="发布时间:{{item.Nowtime}}">
-                    <view class="push">
-                        <view class="item">时间：{{item.time}}</view>
-                        <view class="item">地点：{{item.didian_study}}</view>
-                        <view class="item">学习项目：{{item.id_study}}</view>
-                        <view class="item">联系方式：{{ item.id_mess }}</view>
-                        <view class="item">备注:{{ item.beizhu }}</view>
-                    </view>
-                </van-panel>
-            </van-swipe-cell>
+        <view class="hisstudy">
             <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+            <view class='content' wx:for="{{arroldstudy}}" wx:key="222">
+                <van-dialog id="van-dialog" />
+                <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
+                    <view class="userinfo">
+                        <block>
+                            <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
+                            <text class="userinfo-nickname">{{item.nickname}}</text>
+                        </block>
+                    </view>
+                    <van-panel desc="发布时间:{{item.Nowtime}}">
+                        <view class="push">
+                            <view class="item">时间：{{item.time}}</view>
+                            <view class="item">地点：{{item.didian_study}}</view>
+                            <view class="item">学习项目：{{item.id_study}}</view>
+                            <view class="item">联系方式：{{ item.id_mess }}</view>
+                            <view class="item">备注:{{ item.beizhu }}</view>
+                        </view>
+                    </van-panel>
+                </van-swipe-cell>
+                <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+            </view>
+            <view class="backnews" wx:if="{{arroldstudy.length==0}}">
+                <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
+                <view>快去发布新内容吧～～</view>
+            </view>
+            <view class="loading" wx:if="{{loadingstudy}}">
+                <van-loading type="spinner" color="#333366" size="5vw" />
+            </view>
+            <view wx:if="{{endstudy}}" class="newsdown">已经到底了哦~</view>
         </view>
-        <view class="backnews" wx:if="{{arroldstudy.length==0}}">
-            <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
-            <view>快去发布新内容吧～～</view>
-        </view>
-        <view class="loading" wx:if="{{loadingstudy}}">
-            <van-loading type="spinner" color="#333366" size="5vw" />
-        </view>
-        <view wx:if="{{endstudy}}" class="newsdown">已经到底了哦~</view>
     </van-tab>
-
     <!-- 我的自定义历史界面 -->
     <van-tab title="自定义" title-style="color: #24343b;">
-        <view style="height:5vw;background-color:rgb(251,251,251);"></view>
-        <view class='content' wx:for="{{arroldcustomize}}" wx:key="223">
-            <van-dialog id="van-dialog" />
-            <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
-                <view class="userinfo">
-                    <block>
-                        <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
-                        <text class="userinfo-nickname">{{item.nickname}}</text>
-                    </block>
-                </view>
-                <van-panel desc="发布时间:{{item.Nowtime}}">
-                    <view class="push">
-                        <view class="item">时间:{{item.time}}</view>
-                        <view class="item">地点:{{item.didian_customize}}</view>
-                        <view class="item">项目:{{item.id_customize}}</view>
-                        <view class="item">联系方式:{{ item.id_mess }}</view>
-                        <view class="item">备注:{{item.beizhu}}</view>
-                    </view>
-                </van-panel>
-            </van-swipe-cell>
+        <view class="hiscus">
             <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+            <view class='content' wx:for="{{arroldcustomize}}" wx:key="223">
+                <van-dialog id="van-dialog" />
+                <van-swipe-cell id="swipe-cell" right-width="{{ 90 }}" async-close bind:close="onClose" data-id='{{item._id}}' data-index='{{index}}'>
+                    <view class="userinfo">
+                        <block>
+                            <image class="userinfo-avatar" src="{{item.touxiang}}"></image>
+                            <text class="userinfo-nickname">{{item.nickname}}</text>
+                        </block>
+                    </view>
+                    <van-panel desc="发布时间:{{item.Nowtime}}">
+                        <view class="push">
+                            <view class="item">时间:{{item.time}}</view>
+                            <view class="item">地点:{{item.didian_customize}}</view>
+                            <view class="item">项目:{{item.id_customize}}</view>
+                            <view class="item">联系方式:{{ item.id_mess }}</view>
+                            <view class="item">备注:{{item.beizhu}}</view>
+                        </view>
+                    </van-panel>
+                </van-swipe-cell>
+                <view style="height:5vw;background-color:rgb(251,251,251);"></view>
+            </view>
+            <view class="backnews" wx:if="{{arroldcustomize.length==0}}">
+                <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
+                <view>快去发布新内容吧～～</view>
+            </view>
+            <view class="loading" wx:if="{{loadingcus}}">
+                <van-loading type="spinner" color="#333366" size="5vw" />
+            </view>
+            <view wx:if="{{endcus}}" class="newsdown">已经到底了哦~</view>
         </view>
-        <view class="backnews" wx:if="{{arroldcustomize.length==0}}">
-            <image src="https://neauhand.hhp.im/img/kong.png" class="pickong"></image>
-            <view>快去发布新内容吧～～</view>
-        </view>
-       <view class="loading" wx:if="{{loadingcus}}">
-  <van-loading type="spinner" color="#333366" size="5vw" />
-</view>
-<view wx:if="{{endcus}}" class="newsdown">已经到底了哦~</view>
     </van-tab>
 </van-tabs>

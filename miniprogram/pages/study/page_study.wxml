@@ -1,4 +1,5 @@
 <!-- pages/car/page_car.wxml -->
+<view class="all">
 <view class="head_input">
   <van-notify id="custom-selector" />
   <van-cell title="时间" icon="clock-o" is-link bind:click="onTap" value="{{time}}" />
@@ -55,3 +56,4 @@
   <van-loading type="spinner" color="#333366" size="5vw" />
 </view>
 <view wx:if="{{end}}" class="newsdown">已经到底了哦~</view>
+</view>

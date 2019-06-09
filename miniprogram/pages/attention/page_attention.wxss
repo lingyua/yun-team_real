@@ -7,7 +7,9 @@
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    /* background-color: rgb(251, 251, 251); */
+    font-size: 4vw;
+    text-align: center;
+    background-color: rgb(251, 251, 251);
 }
 
 .attentionbox {
@@ -17,12 +19,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 4vw;
-    text-align: center;
    
-}
-
-.logo_jser{
-height:14vw;
-width:23vw;
 }

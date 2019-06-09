@@ -1,4 +1,5 @@
 <!-- miniprogram/pages/search/page_search.wxml -->
+<view class="all">
 <view class="searchbox">
   <view class="head">
     <image src="https://neauhand.hhp.im/img/zudui.png" class="logo"></image>
@@ -65,3 +66,4 @@
   <van-loading type="spinner" color="#333366" size="5vw" />
 </view>
 <view wx:if="{{end}}" class="newsdown">已经到底了哦~</view>
+</view>

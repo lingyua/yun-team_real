@@ -16,7 +16,7 @@ Page({
 
     loadingcar: false, //加载图标
     endcar: false, //到底文字，无更多条数时激活
-    listcar: 10, //拼车初始取回条数
+    listcar: 10, //出克初始取回条数
 
     loadingsport: false, //加载图标
     endsport: false, //到底文字，无更多条数时激活
@@ -32,7 +32,7 @@ Page({
 
   },
   changetab(res) {
-    console.log(typeof(res.detail.index))
+    console.log(typeof (res.detail.index))
     this.setData({
       tabnum: res.detail.index
     })
@@ -128,8 +128,7 @@ Page({
           })
         }
       },
-      fail() {
-      }
+      fail() {}
     })
   },
 
@@ -159,8 +158,7 @@ Page({
           })
         }
       },
-      fail() {
-      }
+      fail() {}
     })
   },
 
@@ -190,8 +188,7 @@ Page({
           })
         }
       },
-      fail() {
-      }
+      fail() {}
     })
   },
 
@@ -221,8 +218,7 @@ Page({
           })
         }
       },
-      fail() {
-      }
+      fail() {}
     })
   },
 
@@ -249,7 +245,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -366,14 +362,10 @@ Page({
    */
   onReachBottom: function () {
     let that = this;
-    console.log(this.data.listcar)
-    console.log(this.data.listsport)
-    console.log(this.data.liststudy)
-    console.log(this.data.listcus)
     console.log("触底了");
     if (this.data.tabnum === 0) {
-
       if (!that.data.endcar) {
+        console.log(this.data.listcar)
         console.log(1)
         that.setData({
           loadingcar: true,
@@ -385,8 +377,8 @@ Page({
       }
     }
     if (this.data.tabnum === 1) {
-
       if (!that.data.endsport) {
+        console.log(this.data.listsport)
         console.log(2)
         that.setData({
           loadingsport: true,
@@ -398,8 +390,8 @@ Page({
       }
     }
     if (this.data.tabnum === 2) {
-
       if (!that.data.endstudy) {
+        console.log(this.data.liststudy)
         console.log(1)
         that.setData({
           loadingstudy: true,
@@ -411,8 +403,8 @@ Page({
       }
     }
     if (this.data.tabnum === 3) {
-
       if (!that.data.endcus) {
+        console.log(this.data.listcus)
         console.log(1)
         that.setData({
           loadingcus: true,
