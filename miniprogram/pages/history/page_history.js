@@ -16,7 +16,7 @@ Page({
 
     loadingcar: false, //加载图标
     endcar: false, //到底文字，无更多条数时激活
-    listcar: 10, //出克初始取回条数
+    listcar: 10, //拼车初始取回条数
 
     loadingsport: false, //加载图标
     endsport: false, //到底文字，无更多条数时激活

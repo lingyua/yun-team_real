@@ -1,7 +1,7 @@
 <!-- pages/card/page_card.wxml -->
 <van-tabs color="rgba(153,153,153,0.5);" animated sticky bind:change='changetab'>
-    <!-- 我的出克历史界面 -->
-    <van-tab title="出克" title-style="color: #24343b;">
+    <!-- 我的拼车历史界面 -->
+    <van-tab title="拼车" title-style="color: #24343b;">
         <view class="hiscar">
             <view style="height:5vw;background-color:rgb(251,251,251);"></view>
             <view class='content' wx:for="{{arroldcar}}" wx:key="index">

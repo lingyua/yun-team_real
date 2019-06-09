@@ -105,7 +105,7 @@
 }
 
 .backnews {
-    height: 90vh;
+    /* height: 70vh; */
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@
     align-items: center;
     text-align: center;
     font-size: 3.5vw;
-    background-color: rgb(251, 251, 251);
+    /* background-color: rgb(251, 251, 251); */
 }
 .pickong {
     width: 192rpx;
